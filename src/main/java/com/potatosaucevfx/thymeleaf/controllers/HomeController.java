@@ -1,12 +1,11 @@
 package com.potatosaucevfx.thymeleaf.controllers;
 
+import com.potatosaucevfx.thymeleaf.models.Book;
 import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cglib.core.Local;
-import org.springframework.context.i18n.LocaleContext;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +28,8 @@ public class HomeController {
     public ModelAndView getHomePage(HttpServletRequest request, HttpServletResponse response,
             @RequestParam(name = "name", required = false) String name) {
 
+        Book bookOne = new Book(0, "A lonely Potato", "RJ Nader");
+
         Locale loc = LocaleContextHolder.getLocale();
         ModelAndView mav = new ModelAndView("index");
 
@@ -38,8 +39,18 @@ public class HomeController {
 
         logger.info(loc.getLanguage());
 
+        mav.addObject("bookOne", bookOne);
         mav.addObject("name", name);
         mav.addObject("someText", "Welcome to the site!");
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/index2")
+    public ModelAndView getHomePage2(HttpServletRequest request, HttpServletResponse response,
+            @RequestParam(name = "name", required = false) String name) {
+
+        ModelAndView mav = new ModelAndView("index2");
 
         return mav;
     }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{Layout}">
+    <head>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}" />
+    </head>
+    <body>
+        <header layout:fragment="header">
+            <h1>Reports header</h1>
+        </header>
+
+        <section layout:fragment="content">
+            <h2>Reports Layout Default Content</h2>
+        </section>
+
+        <footer layout:fragment="footer">
+            <h2>Reports Layout Default Footer</h2>
+        </footer>
+    </body>
+</html>

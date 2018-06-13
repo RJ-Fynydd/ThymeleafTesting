@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Thymeleaf Testing Site</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    </head>
+    <body>
+        <header layout:fragment="header">
+            <h1>Default header</h1>
+        </header>
+
+        <section layout:fragment="content">
+            <h2>Default Content</h2>
+        </section>
+
+        <footer layout:fragment="footer">
+            <h2>Default Footer</h2>
+        </footer>
+    </body>
+</html>

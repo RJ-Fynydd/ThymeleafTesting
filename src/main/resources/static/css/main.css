@@ -1,0 +1,15 @@
+/* 
+    Created on : Jun 12, 2018, 9:29:49 PM
+    Author     : Richard Nader <richard.nader@fynydd.com>
+*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+p {
+    font-size: 20pt;
+}
